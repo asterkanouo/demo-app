@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+    
     <!-- Scripts -->
 
 
@@ -95,7 +96,20 @@
             @yield('content')
         </main>
     </div>
+    <script src="/js/jquery-3.0.0.min.js" type="text/javascript"></script>
+ <script src="/js/jquery.printPage.js" type="text/javascript"></script> 
+
+    <script type="text/javascript">
+  $(document).ready(function(){
+      $('.btnPrint').printPage();
+    });
+  </script>
+
+   
+    
 </body>
+
+
 
 
 </html>

@@ -1,58 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel 8 Ajax Autocomplete Search from Database Example - NiceSnippets.com</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-</head>
-<body class="bg-dark">
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-10 offset-1">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Laravel 8 Ajax Autocomplete Search from Database Example - NiceSnippets.com</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="name">Product Name</label>
-                                    <input type="text" name="name" id="name" class="form-control" autocomplete="on">
-                                </div>
-                                <div id="product_list"></div>
-                            </div>
-                            <div class="col-lg-3"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#name').on('keyup',function () {
-                var query = $(this).val();
-                $.ajax({
-                    url:'{{ route('search') }}',
-                    type:'GET',
-                    data:{'nom':query},
-                    success:function (data) {
-                        $('#contrat.index').html(data);
-                    }
-                })
-            });
-            $(document).on('click', 'li', function(){
-                var value = $(this).text();
-                $('#nom').val(value);
-                $('#contrat.index').html("");
-            });
-        });
-    </script>   
-</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>jQuery Print Plugin</title>
+    <!-- <script src="jquery-1.4.4.min.js" type="text/javascript"></script> -->
+    <script src="/js/jquery.printPage.js" type="text/javascript"></script>
+
+  <script>  
+  $(document).ready(function() {
+    $(".btnPrint").printPage();
+  });
+  </script>
+	</head>
+	<body>
+		<h3>This is a print button example</h3>
+		<p>When you hit the button it will load your print template in an iframe and print it!</p>
+		<p><a class="btnPrint" href='iframes/iframe.html'>Print!</a></p>
+    <p><a class="btnPrint" href='iframes/iframe2.html'>Print second page!</a></p>
+	</body>
 </html>
+
+
+<a class="btn btnPrint btn-success mx-2 mb-2" href="{{url('impContrat/'.$contrats->id) }}"><span class="fa fa-print"></span> Imprimer</a>

@@ -82,6 +82,6 @@
         @endforeach
     </table>
 
-   
+    
 
 @endsection

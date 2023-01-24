@@ -10,7 +10,7 @@
     <h4>Contrat de M./Mme <b> {{ $contrats->locataire->nom_complet }}  </b>({{ $contrats->locataire->telephone }})</h4>
     </div>
         <div class="col d-flex justify-content-end">
-            <a class="btn btnprn btn-success mx-2 mb-2" href="{{url('impContrat/'.$contrats->id) }}"><span class="fa fa-print"></span> Imprimer</a>
+            <a class="btn btnPrint btn-success mx-2 mb-2" href="{{url('impContrat/'.$contrats->id) }}"><span class="fa fa-print"></span> Imprimer</a>
             <a type="submit" href="{{url('/contrat')}} " class=" mb-2 btn btn-danger"><span class="fa fa-arrow-left"></span> Retour</a>
         </div>
         </div>
@@ -76,3 +76,9 @@
     </table>
     </div>
 @endsection
+
+
+
+
+
+   
